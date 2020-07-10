@@ -5,13 +5,19 @@ using namespace std;
 
 int main()
 {
-    cout << "Hahah" << endl;
-    Elements e(0, 1, 5);
+    Elements e(0, 1, 4);
+    Elements elements;
 
-    cout << e.elements[0] -> element_l -> operator()(0) << endl; 
-    cout << e.elements[0] -> element_r -> operator()(0) << endl; 
-    cout << e.elements[4] -> element_l -> operator()(1) << endl; 
+    cout << e.elements[0].element_l(0) << endl;
+    cout << e.elements[0].element_r(0) << endl;
+    cout << e.elements[3].element_l(1) << endl;
 
-    
+    elements = e;
+    cout << e.a << endl;
+    cout << e.b << endl;
+    cout << e.n << endl;
+    cout << elements.elements[0].element_l(0) << endl;
+
+
     return 0;
 }

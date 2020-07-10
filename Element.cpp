@@ -1,5 +1,11 @@
 #include "Element.h"
 
+// Element::Element(const Element& _element)
+// {
+//     this -> element_l = _element.element_l;
+//     this -> element_r = _element.element_r;
+// }
+
 double ElementL::operator()(double x)
 {
     return (b - x) / (b - a);

@@ -7,12 +7,13 @@ class ElementL : public Function
 {
 public:
     ElementL(double _a, double _b) : a(_a), b(_b) {}
+    ElementL() {}
 
     double operator()(double x);
 
     double derivative(double x);
 
-private:
+public:
     double a{0}, b{1};
 };
 
@@ -20,12 +21,13 @@ class ElementR : public Function
 {
 public:
     ElementR(double _a, double _b) : a(_a), b(_b) {}
+    ElementR() {}
 
     double operator()(double x);
 
     double derivative(double x);
 
-private:
+public:
     double a{0}, b{1};
 };
 class Element
@@ -33,21 +35,16 @@ class Element
 public:
     Element(double _a, double _b) : a(_a), b(_b)
     {
-        element_l = new ElementL(a, b);
-        element_r = new ElementR(a, b);
+        element_l = ElementL(a, b);
+        element_r = ElementR(a, b);
     }
-    ~Element()
-    {
-        if (element_l)
-            delete element_l;
-        if (element_r)
-            delete element_r;
-    }
+    Element(){}
+    // Element(const Element& _element);
 
-    ElementL *element_l;
-    ElementR *element_r;
+    ElementL element_l;
+    ElementR element_r;
 
-private:
+public:
     double a{0}, b{1};
 };
 
